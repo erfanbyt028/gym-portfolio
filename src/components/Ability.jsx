@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, Play, Sparkles, ShieldCheck, Trophy, Dumbbell } from "lucide-react";
 import { MotionFloat, smoothEase } from "@/components/motion";
-import headerImg from "../../public/images/ability.png";
+import headerImg from "../../public/images/ability.webp";
 
 export default function Ability() {
   return (

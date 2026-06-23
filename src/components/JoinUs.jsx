@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FaCheckCircle, FaUsers, FaTrophy, FaHeart } from "react-icons/fa";
 import { ArrowLeft, Sparkles, Play } from "lucide-react";
 import { MotionFloat, smoothEase } from "@/components/motion";
-import trainerImg from "../../public/images/joinus.png";
+import trainerImg from "../../public/images/joinus.webp";
 
 const benefits = [
   { icon: <FaCheckCircle />, title: "تمرین‌های تخصصی", description: "برنامه‌های حرفه‌ای برای عضله‌سازی، چربی‌سوزی و تناسب اندام.", accent: "from-pink-500 to-rose-500" },

@@ -17,7 +17,7 @@ import { GiJumpingRope } from "react-icons/gi";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { MotionFloat, smoothEase } from "@/components/motion";
 
-import servicesImg from "../../public/images/servi.png";
+import servicesImg from "../../public/images/servi.webp";
 
 export default function Services() {
   const services = [

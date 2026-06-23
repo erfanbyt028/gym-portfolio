@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, Play, Star, Dumbbell, HeartPulse } from "lucide-react";
 import { MotionFloat, smoothEase } from "@/components/motion";
-import headerImg from "../../public/images/header.png";
+import headerImg from "../../public/images/header.webp";
 
 const stats = [
   { icon: Dumbbell, value: "+۲۵۰", label: "برنامه تمرینی", color: "text-pink-500" },

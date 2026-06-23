@@ -24,14 +24,14 @@ import {
 } from "lucide-react";
 
 // ===== Images =====
-import slider1 from "../../../public/images/slider1.png";
-import slider2 from "../../../public/images/slider2.png";
-import slider3 from "../../../public/images/slider3.png";
+import slider1 from "../../../public/images/slider1.webp";
+import slider2 from "../../../public/images/slider2.webp";
+import slider3 from "../../../public/images/slider3.webp";
 
-import talar1 from "../../../public/images/talar1.jpg";
-import talar2 from "../../../public/images/talar2.jpg";
-import talar3 from "../../../public/images/talar3.jpg";
-import talar4 from "../../../public/images/talar4.jpg";
+import talar1 from "../../../public/images/talar1.webp";
+import talar2 from "../../../public/images/talar2.webp";
+import talar3 from "../../../public/images/talar3.webp";
+import talar4 from "../../../public/images/talar4.webp";
 
 import { BsInstagram } from "react-icons/bs";
 

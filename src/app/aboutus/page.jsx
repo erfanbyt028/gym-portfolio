@@ -23,6 +23,10 @@ import {
 import { useState } from "react";
 import "swiper/css";
 
+// به imports:
+import { AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+
 import { CgInstagram } from "react-icons/cg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,27 +34,29 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-import heroBg from "../../../public/images/aboutusBg.png";
-import heroImg from "../../../public/images/aboutusimg.png";
+import heroBg from "../../../public/images/aboutusBg.webp";
+import heroImg from "../../../public/images/aboutusimg.webp";
 
-import coachImg from "../../../public/images/coach.png";
+import coachImg from "../../../public/images/coach.webp";
 
-import gallery1 from "../../../public/images/facility.jpg";
-import gallery2 from "../../../public/images/mentor-1.jpg";
-import gallery3 from "../../../public/images/mentor-3.jpg";
+import gallery1 from "../../../public/images/facility.webp";
+import gallery2 from "../../../public/images/mentor-1.webp";
+import gallery3 from "../../../public/images/mentor-3.webp";
 
-import cert1 from "../../../public/images/mdrk1.jpg";
-import cert2 from "../../../public/images/mdrk2.jpg";
-import cert3 from "../../../public/images/mdrk3.jpg";
-import cert4 from "../../../public/images/mdrk4.jpg";
-import cert5 from "../../../public/images/mdrk5.jpg";
-import cert6 from "../../../public/images/mdrk6.jpg";
-import cert7 from "../../../public/images/mdrk7.jpg";
-import cert8 from "../../../public/images/mdrk8.jpg";
+import cert1 from "../../../public/images/mdrk1.webp";
+import cert2 from "../../../public/images/mdrk2.webp";
+import cert3 from "../../../public/images/mdrk3.webp";
+import cert4 from "../../../public/images/mdrk4.webp";
+import cert5 from "../../../public/images/mdrk5.webp";
+import cert6 from "../../../public/images/mdrk6.webp";
+import cert7 from "../../../public/images/mdrk7.webp";
+import cert8 from "../../../public/images/mdrk8.webp";
 import { siteConfig } from "@/lib/site";
 
 export default function AboutCoachPage() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  // به جای useState قبلی برای selectedImage:
+  const [selectedItem, setSelectedItem] = useState(null);
+
   const stats = [
     {
       number: "12+",
@@ -176,7 +182,7 @@ export default function AboutCoachPage() {
               </p>
 
               <h1 className="text-5xl font-black leading-tight md:text-7xl">
-                همراز قاسمی 
+                همراز قاسمی
               </h1>
 
               <h2 className="mt-4 text-2xl font-bold text-pink-300 md:text-3xl">
@@ -255,7 +261,11 @@ export default function AboutCoachPage() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.55,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               whileHover={{ y: -8 }}
               className="theme-card group rounded-[2rem] p-8 transition-all duration-500"
             >
@@ -302,7 +312,8 @@ export default function AboutCoachPage() {
               هدف من فقط تغییر ظاهر افراد نیست؛ بلکه ساختن ذهنی قوی، سبک زندگی
               سالم و افزایش اعتمادبه‌نفس در کنار تناسب اندام است. به‌عنوان مربی
               فیتنس در {siteConfig.city}، سال‌ها تجربه و کار با صدها هنرجو باعث
-              شده امروز بتوانم بهترین مسیر را برای رشد فیزیکی و ذهنی افراد طراحی کنم.
+              شده امروز بتوانم بهترین مسیر را برای رشد فیزیکی و ذهنی افراد طراحی
+              کنم.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -353,26 +364,19 @@ export default function AboutCoachPage() {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}
-          slidesPerView={1}
           loop
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1280: {
-              slidesPerView: 3,
-            },
+            768: { slidesPerView: 2 },
+            1280: { slidesPerView: 3 },
           }}
         >
           {certificates.map((item, index) => (
             <SwiperSlide key={index}>
-              <div
-                onClick={() => setSelectedImage(item.image)}
-                className="theme-card group cursor-pointer overflow-hidden rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2"
+              <motion.div
+                layoutId={`card-${item.title}`}
+                onClick={() => setSelectedItem(item)}
+                className="theme-card group cursor-pointer overflow-hidden rounded-[2.5rem] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_-10px_rgba(236,72,153,0.4)]"
               >
                 {/* IMAGE */}
                 <div className="relative overflow-hidden">
@@ -386,7 +390,7 @@ export default function AboutCoachPage() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  <div className="absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-xl">
+                  <div className="absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-xl">
                     <BadgeCheck size={28} />
                   </div>
                 </div>
@@ -404,38 +408,83 @@ export default function AboutCoachPage() {
                     <ArrowUpRight size={18} />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
 
-      {/* MODAL */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div
-            className="relative w-full max-w-5xl px-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* CLOSE */}
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-4 text-white text-3xl"
+        {/* MODAL */}
+        <AnimatePresence>
+          {selectedItem && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              ✕
-            </button>
+              {/* BACKDROP */}
+              <motion.div
+                className="absolute inset-0 bg-black/70 backdrop-blur-xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedItem(null)}
+              />
 
-            <img
-              src={selectedImage}
-              alt="certificate"
-              className="w-full max-h-[85vh] rounded-2xl object-contain shadow-2xl"
-            />
-          </div>
-        </div>
-      )}
+              {/* MODAL CARD */}
+              <motion.div
+                layoutId={`card-${selectedItem.title}`}
+                drag="y"
+                dragConstraints={{ top: 0, bottom: 0 }}
+                onDragEnd={(e, info) => {
+                  if (info.offset.y > 150) setSelectedItem(null);
+                }}
+                className="relative z-10 w-full max-w-4xl overflow-hidden rounded-[2.5rem] bg-zinc-900 shadow-2xl"
+              >
+                {/* IMAGE */}
+                <motion.div
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="overflow-hidden"
+                >
+                  <Image
+                    src={selectedItem.image}
+                    alt={selectedItem.title}
+                    width={1000}
+                    height={600}
+                    className="h-[450px] w-full object-cover hover:scale-105 transition duration-700"
+                  />
+                </motion.div>
+
+                {/* CLOSE */}
+                <button
+                  onClick={() => setSelectedItem(null)}
+                  className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md hover:scale-110 transition"
+                >
+                  <X />
+                </button>
+
+                {/* CONTENT */}
+                <motion.div
+                  className="p-8"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-3xl font-bold">
+                    {selectedItem.title}
+                  </h3>
+
+                  <p className="text-white/60 mt-4 leading-8">
+                    {selectedItem.desc}
+                  </p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
       {/* ================= SERVICES ================= */}
       <section className="theme-section py-24">
@@ -465,7 +514,9 @@ export default function AboutCoachPage() {
 
                 <h3 className="text-3xl font-black">{service.title}</h3>
 
-                <p className="theme-text-secondary mt-5 leading-8">{service.desc}</p>
+                <p className="theme-text-secondary mt-5 leading-8">
+                  {service.desc}
+                </p>
 
                 <span className="mt-8 flex items-center gap-2 font-bold text-pink-500">
                   مشاهده بیشتر

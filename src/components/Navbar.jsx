@@ -9,8 +9,8 @@ import { Menu, X, Dumbbell, ArrowUpRight } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "./ThemeProvider";
 import { siteConfig } from "@/lib/site";
-import logoWhite from "../../public/images/logo-white.png";
-import logoDark from "../../public/images/logo-dark.png";
+import logoWhite from "../../public/images/logo-white.webp";
+import logoDark from "../../public/images/logo-white.webp";
 
 const navLinks = [
   { href: "/", label: "خانه" },
@@ -88,8 +88,8 @@ export default function Navbar() {
               <Image
                 src={isDark ? logoWhite : logoDark}
                 alt={siteConfig.author}
-                width={140}
-                height={45}
+                width={120}
+                height={35}
                 priority
                 className="h-auto w-[110px] object-contain md:w-[135px]"
               />

@@ -1,9 +1,9 @@
-import blog1 from "../../public/images/blog1.png";
-import blog2 from "../../public/images/blog2.png";
-import blog3 from "../../public/images/blog3.png";
-import blog4 from "../../public/images/blog4.png";
-import blog5 from "../../public/images/blog5.png"; 
-import blog6 from "../../public/images/blog6.png";
+import blog1 from "../../public/images/blog1.webp";
+import blog2 from "../../public/images/blog2.webp";
+import blog3 from "../../public/images/blog3.webp";
+import blog4 from "../../public/images/blog4.webp";
+import blog5 from "../../public/images/blog5.webp"; 
+import blog6 from "../../public/images/blog6.webp";
 
 export const blogPosts = [
   {
